@@ -25,6 +25,7 @@ const Game = ({ field, dataWelcome }) => {
   const [count, setCount] = useState(LocalCount.Data || 0);
   const [disabled, setDisabled] = useState(false);
   const { firstN, backSideCard } = dataWelcome;
+
   const dispatch = useDispatch();
   useEffect(() => {
     LocalCount.Data = count;
