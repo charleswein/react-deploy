@@ -1,0 +1,30 @@
+.container{
+ text-align: center;
+}
+
+.cards-container{
+ display: flex;
+ justify-content: center;
+}
+
+.card{
+ width: 10%;
+ margin: 0px 15px;
+}
+.card-img{
+ border-radius: 8%;
+}
+.form {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.form input{
+ width: 30%;
+}
+.select {
+ width: 60%;
+}
+.btn {
+ margin-top: 40px;
+}

@@ -1,0 +1,36 @@
+.row{
+ margin: 0 20px;
+ display: flex;
+ justify-content: space-between;
+}
+
+
+.card {
+ margin: 10px 10px;
+ width: 100px;
+ height: 20vh;
+}
+
+
+.timer-table{
+ font-size: 1.5rem;
+ display: flex;
+ justify-content: center;
+}
+.container-controls{
+ display: flex;
+ justify-content: flex-start;
+}
+
+.container-row{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.container-card{
+ display: block;
+ width: 150px;
+ height: 210px;
+ margin: 5px;
+ 
+}
