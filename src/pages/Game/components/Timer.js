@@ -1,17 +1,18 @@
 import React, {useState,useEffect} from 'react'
-import calculateTimer from '../../../data/calculateTimer'
-import ControlsTimer from './ControlsTimer';
 
 
-const Timer = () => {
- const [timeInSeconds, setTimeInSeconds] = useState(0); 
- const [timerArray, setTimerArray] = useState([]);
+const Timer = ({timerArray, setTimeInSeconds}) => {
 
- useEffect(() => {
-  let timerArray = calculateTimer(timeInSeconds);
-  setTimerArray(timerArray)
- }, [timeInSeconds])
+ const [intervalId,setIntervalId] = useState(0) 
 
+ useEffect(()=>{
+  let interval = setInterval(() => {
+   setTimeInSeconds((prev) => {
+    return prev + 1
+   })
+  }, 1000);
+  setIntervalId(interval)
+ },[setTimeInSeconds])
  return (
   <div className="timer-container">
    <div className="timer-table">
@@ -21,7 +22,6 @@ const Timer = () => {
     <span>:</span>
     <p className="timer-text">{timerArray[2]}</p>
    </div>
-   <ControlsTimer setTimeInSeconds={setTimeInSeconds}/>
   </div>
 
  )

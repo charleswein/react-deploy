@@ -31,4 +31,11 @@ export class LocalCount extends Local{
  }
 }
 
+export class LocalDisabled extends Local{
+ constructor(name){
+  super(name);
+  this.name = 'DataGame';
+ }
+}
+
 

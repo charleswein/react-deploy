@@ -8,7 +8,7 @@ const Card = ({type, card, row, flipped,id}) => {
  const handleClick = () => counter(row,card,type,id)
 
  return (
-  <div className="container-card" flipped={flipped} style={flipped === 'true' ? {background: `center / cover no-repeat url(${process.env.PUBLIC_URL + `/dist/card/${type}.png`})`} : {background: `center / cover no-repeat url(${`${backSideCard}`})`}} onClick={handleClick}>
+  <div className={flipped === 'true' ? 'container-card front' :  'container-card back'} flipped={flipped} style={flipped === 'true' ? {background: `center / cover no-repeat url(${process.env.PUBLIC_URL + `/dist/card/${type}.png`})`} : {background: `center / cover no-repeat url(${`${backSideCard}`})`}} onClick={disabled ? null : handleClick}>
    
   </div>
  )
