@@ -1,4 +1,4 @@
-import { FLIP_FALSE, FLIP_TRUE, LOAD_FROM_LOCAL, MATCHED } from "../types";
+import { FLIP_FALSE, FLIP_TRUE, LOAD_FROM_LOCAL, MATCHED, DISABLED_TRUE, DISABLED_FALSE } from "../types";
 import {
   getQualFlippedCard,
   getArrayFlippedCard,
@@ -13,6 +13,7 @@ const flippedChangeFalse = (data) => ({
   payload: data,
 });
 
+
 const matchedChange = (data) => ({
   type: MATCHED,
   payload: data,
@@ -22,9 +23,14 @@ const changeFlipProperty = (row, col) => {
   return (dispatch, getState) => {
     let store = getState();
     let field = store.app.field;
+    let flippedCard = getQualFlippedCard(field);
     if (field[row][col].flipped === false) {
       field[row][col].flipped = true;
       dispatch(flippedChangeTrue(field));
+    }
+    console.log(flippedCard);
+    if(flippedCard % 2 !== 0){
+      dispatch({type: DISABLED_TRUE})
     }
   };
 };
@@ -46,6 +52,7 @@ const closeAllCards = () => {
           });
         });
         dispatch(flippedChangeFalse(newField));
+        dispatch({type: DISABLED_FALSE})
       }, 2000);
     }
   };

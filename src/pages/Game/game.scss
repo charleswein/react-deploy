@@ -32,5 +32,13 @@
  width: 150px;
  height: 210px;
  margin: 5px;
- 
 }
+.front{
+ transition: transform .5s ease;
+ transform: perspective(600px) rotateY(-180deg)
+}
+.back{
+ transition: transform .5s ease;
+ transform: perspective(600px) rotate(0);
+}
+
